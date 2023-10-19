@@ -2,7 +2,7 @@
 <launch>
   <arg name="vehicle_id" default="default"/>
 
-  <let name="sensor_model" value="aip_x1"/>
+  <let name="sensor_model" value="robicarr_sensor_kit"/>
   <let name="parent_frame" value="base_link"/>
 
   <!-- extrinsic_calibration_client -->
