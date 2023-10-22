@@ -3,41 +3,37 @@
   <arg name="vehicle_id" default="robicarr"/>
   <let name="sensor_model" value="robicarr_sensor_kit"/>
 
-  <let name="camera_calibration_service_names" value="['']"/>
-
-  <let
-    name="lidar_calibration_service_names"
-    value="[/sensor_kit/sensor_kit_base_link/rs_bpearl_front_base_link]"
-  />
-
-  <let name="camera_calibration_sensor_kit_frames" value="['']"/>
-
-  <let name="lidar_calibration_sensor_kit_frames" value="[sensor_kit_base_link]"/>
-
-  <let name="calibration_camera_frames" value="['']"/>
-
-  <let name="calibration_camera_optical_link_frames" value="['']"/>
-
-  <let name="calibration_lidar_base_frames" value="[
-    rs_bpearl_front_base_link]"/>
-
-  <let name="calibration_lidar_frames" value="[rs_bpearl_front]"/>
-
-  <let name="mapping_lidar_frame" value="rs_helios_top"/>
-  <let name="mapping_pointcloud" value="/sensing/lidar/top/pointcloud_raw_ex"/>
-  <let name="detected_objects" value="/perception/object_recognition/detection/objects"/>
-
-  <let name="calibration_camera_info_topics" value="['']"/>
-
-  <let name="calibration_image_topics" value="['']"/>
-
-  <let name="calibration_pointcloud_topics" value="[/sensing/lidar/front/pointcloud_raw_ex]"/>
-
   <arg name="rviz"/>
   <let name="rviz_profile" value="$(find-pkg-share extrinsic_mapping_based_calibrator)/rviz/x1.rviz"/>
 
   <arg name="src_yaml" default="$(find-pkg-share individual_params)/config/$(var vehicle_id)/$(var sensor_model)/sensor_kit_calibration.yaml"/>
   <arg name="dst_yaml" default="$(env HOME)/sensor_kit_calibration.yaml"/>
+
+  <let name="camera_calibration_service_names" value="['']"/>
+
+  <let name="camera_calibration_sensor_kit_frames" value="['']"/>
+  <let name="calibration_camera_frames" value="['']"/>
+  <let name="calibration_camera_optical_link_frames" value="['']"/>
+  <let name="calibration_camera_info_topics" value="['']"/>
+
+  <let name="calibration_image_topics" value="['']"/>
+
+  <let name="lidar_calibration_sensor_kit_frames" value="[sensor_kit_base_link]"/>
+
+  <let
+          name="lidar_calibration_service_names"
+          value="[/sensor_kit/sensor_kit_base_link/rs_bpearl_front_base_link]"
+  />
+
+  <let name="calibration_lidar_base_frames" value="[rs_bpearl_front_base_link]"/>
+  <let name="calibration_lidar_frames" value="[rs_bpearl_front]"/>
+
+  <let name="mapping_lidar_frame" value="rs_helios_top"/>
+  <let name="mapping_pointcloud" value="/sensing/lidar/top/outlier_filtered/pointcloud"/>
+  <let name="detected_objects" value="/perception/object_recognition/detection/objects"/>
+
+  <let name="calibration_pointcloud_topics" value="[
+    /sensing/lidar/front/pointcloud_raw_ex]"/>
 
   <group>
     <!-- extrinsic_calibration_client -->
@@ -49,10 +45,7 @@
     <!-- extrinsic_calibration_manager -->
     <node pkg="extrinsic_calibration_manager" exec="extrinsic_calibration_manager" name="extrinsic_calibration_manager" output="screen">
       <param name="parent_frame" value="sensor_kit_base_link"/>
-      <param name="child_frames" value="[
-        livox_front_left_base_link,
-        livox_front_center_base_link,
-        livox_front_right_base_link]"/>
+      <param name="child_frames" value="[rs_bpearl_front_base_link]"/>
     </node>
   </group>
 
