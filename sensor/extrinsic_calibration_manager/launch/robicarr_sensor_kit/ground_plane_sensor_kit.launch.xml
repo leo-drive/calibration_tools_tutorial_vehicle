@@ -19,21 +19,21 @@
   <!-- extrinsic_calibration_manager -->
   <node pkg="extrinsic_calibration_manager" exec="extrinsic_calibration_manager" name="extrinsic_calibration_manager" output="screen">
     <param name="parent_frame" value="$(var parent_frame)"/>
-    <param name="child_frames" value="
-    [rs_helios_top_base_link,
-     rs_bpearl_front_base_link]"/>
+    <param name="child_frames" value="[rs_bpearl_front_base_link]"/>
+<!--    [rs_helios_top_base_link,-->
+
   </node>
 
   <!-- rs_helios_top_base_link: extrinsic_ground_plane_calibrator -->
-  <group>
-    <include file="$(find-pkg-share extrinsic_ground_plane_calibrator)/launch/calibrator.launch.xml">
-      <arg name="ns" value="$(var parent_frame)/rs_helios_top_base_link"/>
-      <arg name="base_frame" value="$(var base_frame)"/>
-      <arg name="parent_frame" value="$(var parent_frame)"/>
-      <arg name="child_frame" value="rs_helios_top_base_link"/>
-      <arg name="pointcloud_topic" value="/sensing/lidar/top/pointcloud_raw_ex"/>
-    </include>
-  </group>
+<!--  <group>-->
+<!--    <include file="$(find-pkg-share extrinsic_ground_plane_calibrator)/launch/calibrator.launch.xml">-->
+<!--      <arg name="ns" value="$(var parent_frame)/rs_helios_top_base_link"/>-->
+<!--      <arg name="base_frame" value="$(var base_frame)"/>-->
+<!--      <arg name="parent_frame" value="$(var parent_frame)"/>-->
+<!--      <arg name="child_frame" value="rs_helios_top_base_link"/>-->
+<!--      <arg name="pointcloud_topic" value="/sensing/lidar/top/pointcloud_raw_ex"/>-->
+<!--    </include>-->
+<!--  </group>-->
 
   <!-- rs_bpearl_front_base_link: extrinsic_ground_plane_calibrator -->
   <group>
