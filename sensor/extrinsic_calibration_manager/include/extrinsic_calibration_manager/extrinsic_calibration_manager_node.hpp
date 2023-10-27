@@ -31,7 +31,7 @@
 #endif
 #include "rclcpp/rclcpp.hpp"
 #include "tf2_ros/transform_broadcaster.h"
-#include "tier4_autoware_utils/tier4_autoware_utils.hpp"
+#include "tier4_autoware_utils/geometry/geometry.hpp"
 
 #include "tier4_calibration_msgs/srv/extrinsic_calibration_manager.hpp"
 #include "tier4_calibration_msgs/srv/extrinsic_calibrator.hpp"

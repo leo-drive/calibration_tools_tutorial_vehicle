@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #include <extrinsic_lidar_to_lidar_2d_calibrator/extrinsic_lidar_to_lidar_2d_calibrator.hpp>
-#include <tier4_autoware_utils/tier4_autoware_utils.hpp>
+#include "tier4_autoware_utils/geometry/geometry.hpp"
 
 #include <pcl/ModelCoefficients.h>
 #include <pcl/PCLPointCloud2.h>

@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include "extrinsic_calibration_manager/extrinsic_calibration_manager_node.hpp"
+#include "tier4_autoware_utils/geometry/geometry.hpp"
 
 #include <iomanip>
 #include <memory>

@@ -33,7 +33,7 @@
   <let name="detected_objects" value="/perception/object_recognition/detection/objects"/>
 
   <let name="calibration_pointcloud_topics" value="[
-    /sensing/lidar/right/pointcloud_raw]"/>
+    /sensing/lidar/front/pointcloud_raw]"/>
 
   <group>
     <!-- extrinsic_calibration_client -->
