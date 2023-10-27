@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="vehicle_id" default="robicarr"/>
+  <arg name="vehicle_id" default="tutorial_vehicle"/>
 
-  <let name="sensor_model" value="robicarr_sensor_kit"/>
+  <let name="sensor_model" value="tutorial_vehicle_sensor_kit"/>
 
   <group>
     <push-ros-namespace namespace="sensor_kit"/>

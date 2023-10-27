@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-  <arg name="vehicle_id" default="robicarr"/>
-  <let name="sensor_model" value="robicarr_sensor_kit"/>
+  <arg name="vehicle_id" default="tutorial_vehicle"/>
+  <let name="sensor_model" value="tutorial_vehicle_sensor_kit"/>
   <let name="base_frame" value="base_link"/>
   <let name="parent_frame" value="sensor_kit_base_link"/>
   <let name="rviz_profile" value="$(find-pkg-share extrinsic_ground_plane_calibrator)/rviz/velodyne_top.rviz"/>
